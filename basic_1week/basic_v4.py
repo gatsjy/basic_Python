@@ -5,32 +5,55 @@
   * Blog : https://blog.naver.com/gkswndks123
   * Github : https://github.com/gatsjy
 """
+class B_school():
+    def __init__(self):
+        print("b대학교 초기화")
 
-def english():
-    print("영어과입니다.")
-english()
+        self.school_name = "b학교"
+class A_school():
+    def __init__(self):
+        print("초기화, 생성자")
+        self.student1_name = None
 
-def math(student_name):
-    print(student_name)
-math("토마스")
+        b = self.math()
+        print("수학과 학생 %s" % b)
 
-def academy(student_name1, student_name2, student_name3):
-    print(student_name1)
-    print(student_name2)
-    print(student_name3)
+        b_school = B_school()
+        print(b_school.school_name)
 
-academy("토마스","에디슨","빌리")
+    def math(self):
+        self.student1_name = "영수"
+        name = self.student1_name
 
-def english(help):
-    help()
+        return name
 
-def help():
-    print("도와주러 왔습니다.")
-english(help)
+#A_school()
 
-def multi():
-    return "a","b"
+# 상속의 개념
+class Parent():
+    def __init__(self):
+        print("부모입니다.")
 
-a,b = multi()
-result = multi()
-print(result)
+        self.money = 50000000
+
+    def home(self):
+        return "부모의 집"
+
+class ChildA(Parent):
+    def __init__(self):
+        print("자식A")
+
+        print("부모의 돈을 물려받을 수 없습니다.")
+        print("%s을 물려받았습니다." % self.home())
+
+class ChildB(Parent):
+    def __init__(self):
+        super().__init__()
+        print("자식B")
+
+        print("부모의 돈 %s" % self.money)
+        print("%s을 물려받았습니다." % self.home())
+
+ChildA()
+ChildB()
+
