@@ -229,7 +229,7 @@ class Kiwoom(QAxWidget):
             #self.day_kiwoom_db(code=code) #일봉 데이터 조회
             #self.
 
-    def day_kiwoom_db(self, code=None, date=None, sPrevNext="0"):
+    def day_kiwoom_db(self, code=None, date=None, sPrevNext="19"):
         QTest.qWait(3600) #3.6초마다 딜레이를 준다.
 
         self.dynamicCall("SetInputValue(QString, QString)", "종목코드", code)
@@ -242,7 +242,7 @@ class Kiwoom(QAxWidget):
 
         self.calculator_event_loop.exec_()
 
-    def tradeHigh_kiwoom_db(self, code=None, date=None, sPrevNext="0"):
+    def tradeHigh_kiwoom_db(self, code=None, date=None, sPrevNext="1"):
         QTest.qWait(3600) #3.6초마다 딜레이를 준다.
 
         self.dynamicCall("SetInputValue(QString, QString)", "시장구분", "101")
